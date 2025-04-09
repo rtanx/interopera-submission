@@ -1,11 +1,12 @@
 from fastapi import Depends, FastAPI
 
-from .routers import ai, data
+from .data import router as data_router
+from .ai import router as ai_router
 
 app = FastAPI()
 
-app.include_router(data.router, prefix="/api/data", tags=["data"])
-app.include_router(ai.router, prefix="/api/ai", tags=["ai"])
+app.include_router(data_router.router, prefix="/api/data", tags=["data"])
+app.include_router(ai_router.router, prefix="/api/ai", tags=["ai"])
 
 
 @app.get("/", tags=["root"])
