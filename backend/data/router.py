@@ -1,15 +1,11 @@
-from fastapi import APIRouter
+from typing import List
+from fastapi import APIRouter, HTTPException, Depends
+from .schemas import SalesRep
+from .service import SalesRepService, get_sales_rep_service
 
 router = APIRouter()
 
 
-@router.get("/")
-async def get_data():
-    """
-    Returns dummy data.
-    """
-    dummy_data = [
-        {"id": 1, "name": "John Doe"},
-        {"id": 2, "name": "Jane Smith"}
-    ]
-    return dummy_data
+@router.get("/", response_model=List[SalesRep])
+async def get_data(service: SalesRepService = Depends(get_sales_rep_service)):
+    return service.get_all_sales_reps()
