@@ -101,7 +101,7 @@ class SalesRepService:
         deals = []
         for rep in self._data.salesReps:
             for deal in rep.deals:
-                if deal.status == status:
+                if deal.status.lower() == status.lower():
                     deals.append({
                         "rep_id": rep.id,
                         "rep_name": rep.name,

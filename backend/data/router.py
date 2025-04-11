@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict, Any
 from fastapi import APIRouter, HTTPException, Depends
 from .schemas import SalesRep
 from .service import SalesRepService, get_sales_rep_service
@@ -36,3 +36,12 @@ async def get_by_skill(skill: str, service: SalesRepService = Depends(get_sales_
         raise HTTPException(
             status_code=404, detail="No sales representatives found with the given skill")
     return sales_reps
+
+
+@router.get("/deals/status/{status}", response_model=List[Dict[str, Any]])
+async def get_deals_by_status(status: str, service: SalesRepService = Depends(get_sales_rep_service)):
+    deals = service.get_deals_by_status(status)
+    if len(deals) == 0:
+        raise HTTPException(
+            status_code=404, detail="No deals found with the given status")
+    return deals
