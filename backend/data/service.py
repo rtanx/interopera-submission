@@ -86,7 +86,7 @@ class SalesRepService:
         Returns:
             List[SalesRep]: List of sales representatives with the specified skill
         """
-        return [rep for rep in self._data.salesReps if skill in rep.skills]
+        return [rep for rep in self._data.salesReps if skill.lower() in [s.lower() for s in rep.skills]]
 
     def get_deals_by_status(self, status: str) -> List[Dict[str, Any]]:
         """
