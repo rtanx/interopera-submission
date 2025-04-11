@@ -74,7 +74,7 @@ class SalesRepService:
         Returns:
             List[SalesRep]: List of sales representatives in the specified region
         """
-        return [rep for rep in self._data.salesReps if rep.region == region]
+        return [rep for rep in self._data.salesReps if region.lower() in rep.region.lower()]
 
     def get_sales_reps_by_skill(self, skill: str) -> List[SalesRep]:
         """
