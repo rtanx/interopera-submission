@@ -28,14 +28,20 @@ export default function SalesDataTable({ salesData, isLoading, onSelectRep, sele
             .reduce((sum, deal) => sum + deal.value, 0), 0);
 
     const handleSelectRep = (rep) => {
-        onSelectRep(rep.id === selectedRep?.id ? null : rep);
+        if (rep.id === selectedRep?.id) {
+            onSelectRep(null);
+            setActiveTab('overview');
+        } else {
+            onSelectRep(rep);
+            setActiveTab('details');
+        }
     };
 
     return (
         <div className="p-4">
             <h2 className="text-xl font-semibold mb-4">Sales Representative Data</h2>
 
-            <TabGroup onChange={(index) => setActiveTab(index === 0 ? 'overview' : 'details')}>
+            <TabGroup selectedIndex={activeTab === 'overview' ? 0 : 1} onChange={(index) => setActiveTab(index === 0 ? 'overview' : 'details')}>
                 <TabList className="flex rounded-lg bg-blue-100 p-1 mb-4">
                     <Tab className={({ selected }) =>
                         classNames(
@@ -89,8 +95,8 @@ export default function SalesDataTable({ salesData, isLoading, onSelectRep, sele
                         </div>
 
                         <h3 className="font-medium text-gray-800 mb-2">Sales by Rep</h3>
-                        <div className="overflow-x-auto">
-                            <table className="min-w-full bg-white">
+                        <div className="overflow-x-auto overflow-y-auto max-h-70">
+                            <table className="min-w-full min-h-1 bg-white">
                                 <thead className="bg-gray-100">
                                     <tr>
                                         <th className="py-2 px-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
@@ -156,7 +162,7 @@ export default function SalesDataTable({ salesData, isLoading, onSelectRep, sele
 
                                 <div className="mb-6">
                                     <h4 className="text-sm font-medium text-gray-500 uppercase mb-2">Deals</h4>
-                                    <div className="overflow-x-auto">
+                                    <div className="overflow-x-auto overflow-y-auto max-h-40">
                                         <table className="min-w-full">
                                             <thead className="bg-gray-50">
                                                 <tr>

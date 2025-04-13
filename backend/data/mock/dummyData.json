@@ -1,85 +1,2064 @@
 {
-    "salesReps": [
-      {
-        "id": 1,
-        "name": "Alice",
-        "role": "Senior Sales Executive",
-        "region": "North America",
-        "skills": ["Negotiation", "CRM", "Client Relations"],
-        "deals": [
-          { "client": "Acme Corp", "value": 120000, "status": "Closed Won" },
-          { "client": "Beta Ltd", "value": 50000, "status": "In Progress" },
-          { "client": "Omega Inc", "value": 85000, "status": "Closed Lost" }
-        ],
-        "clients": [
-          { "name": "Acme Corp", "industry": "Manufacturing", "contact": "alice@acmecorp.com" },
-          { "name": "Beta Ltd", "industry": "Retail", "contact": "contact@betaltd.com" }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Bob",
-        "role": "Sales Representative",
-        "region": "Europe",
-        "skills": ["Lead Generation", "Presentation", "Negotiation"],
-        "deals": [
-          { "client": "Gamma Inc", "value": 75000, "status": "Closed Lost" },
-          { "client": "Delta LLC", "value": 90000, "status": "Closed Won" },
-          { "client": "Sigma Corp", "value": 65000, "status": "In Progress" }
-        ],
-        "clients": [
-          { "name": "Gamma Inc", "industry": "Tech", "contact": "info@gammainc.com" },
-          { "name": "Delta LLC", "industry": "Finance", "contact": "support@deltallc.com" }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Charlie",
-        "role": "Account Manager",
-        "region": "Asia-Pacific",
-        "skills": ["Customer Service", "Sales Strategy", "Data Analysis"],
-        "deals": [
-          { "client": "Epsilon Ltd", "value": 110000, "status": "In Progress" },
-          { "client": "Zeta Corp", "value": 60000, "status": "Closed Won" },
-          { "client": "Theta Enterprises", "value": 70000, "status": "Closed Lost" }
-        ],
-        "clients": [
-          { "name": "Epsilon Ltd", "industry": "Healthcare", "contact": "contact@epsilonltd.com" },
-          { "name": "Zeta Corp", "industry": "Finance", "contact": "sales@zetacorp.com" }
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Dana",
-        "role": "Business Development Manager",
-        "region": "South America",
-        "skills": ["Strategic Partnerships", "Negotiation", "Market Analysis"],
-        "deals": [
-          { "client": "Eta Co", "value": 130000, "status": "In Progress" },
-          { "client": "Theta Inc", "value": 80000, "status": "Closed Won" },
-          { "client": "Iota Group", "value": 55000, "status": "Closed Lost" }
-        ],
-        "clients": [
-          { "name": "Eta Co", "industry": "Energy", "contact": "info@etaco.com" },
-          { "name": "Theta Inc", "industry": "Telecommunications", "contact": "sales@thetainc.com" }
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Eve",
-        "role": "Regional Sales Manager",
-        "region": "Middle East",
-        "skills": ["Relationship Building", "Negotiation", "Market Expansion"],
-        "deals": [
-          { "client": "Iota Ltd", "value": 95000, "status": "Closed Won" },
-          { "client": "Kappa LLC", "value": 45000, "status": "In Progress" },
-          { "client": "Lambda Partners", "value": 105000, "status": "Closed Lost" }
-        ],
-        "clients": [
-          { "name": "Iota Ltd", "industry": "Hospitality", "contact": "contact@iotaltd.com" },
-          { "name": "Kappa LLC", "industry": "Retail", "contact": "info@kappallc.com" }
-        ]
-      }
-    ]
-  }
-  
+  "salesReps": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "role": "Senior Sales Executive",
+      "region": "North America",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Relations"
+      ],
+      "deals": [
+        {
+          "client": "Acme Corp",
+          "value": 120000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Beta Ltd",
+          "value": 50000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Omega Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Acme Corp",
+          "industry": "Manufacturing",
+          "contact": "alice@acmecorp.com"
+        },
+        {
+          "name": "Beta Ltd",
+          "industry": "Retail",
+          "contact": "contact@betaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "role": "Sales Representative",
+      "region": "Europe",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Gamma Inc",
+          "value": 75000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Delta LLC",
+          "value": 90000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Sigma Corp",
+          "value": 65000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Gamma Inc",
+          "industry": "Tech",
+          "contact": "info@gammainc.com"
+        },
+        {
+          "name": "Delta LLC",
+          "industry": "Finance",
+          "contact": "support@deltallc.com"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "role": "Account Manager",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Customer Service",
+        "Sales Strategy",
+        "Data Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Epsilon Ltd",
+          "value": 110000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Zeta Corp",
+          "value": 60000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Theta Enterprises",
+          "value": 70000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Epsilon Ltd",
+          "industry": "Healthcare",
+          "contact": "contact@epsilonltd.com"
+        },
+        {
+          "name": "Zeta Corp",
+          "industry": "Finance",
+          "contact": "sales@zetacorp.com"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dana",
+      "role": "Business Development Manager",
+      "region": "South America",
+      "skills": [
+        "Strategic Partnerships",
+        "Negotiation",
+        "Market Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Eta Co",
+          "value": 130000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Theta Inc",
+          "value": 80000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Iota Group",
+          "value": 55000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Eta Co",
+          "industry": "Energy",
+          "contact": "info@etaco.com"
+        },
+        {
+          "name": "Theta Inc",
+          "industry": "Telecommunications",
+          "contact": "sales@thetainc.com"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Eve",
+      "role": "Regional Sales Manager",
+      "region": "Middle East",
+      "skills": [
+        "Relationship Building",
+        "Negotiation",
+        "Market Expansion"
+      ],
+      "deals": [
+        {
+          "client": "Iota Ltd",
+          "value": 95000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Kappa LLC",
+          "value": 45000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Lambda Partners",
+          "value": 105000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Iota Ltd",
+          "industry": "Hospitality",
+          "contact": "contact@iotaltd.com"
+        },
+        {
+          "name": "Kappa LLC",
+          "industry": "Retail",
+          "contact": "info@kappallc.com"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Frank",
+      "role": "Sales Representative",
+      "region": "North America",
+      "skills": [
+        "Cold Calling",
+        "Negotiation",
+        "CRM"
+      ],
+      "deals": [
+        {
+          "client": "Omicron Ltd",
+          "value": 80000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Lambda Corp",
+          "value": 65000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Delta Inc",
+          "value": 70000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Omicron Ltd",
+          "industry": "Tech",
+          "contact": "frank@omicronltd.com"
+        },
+        {
+          "name": "Lambda Corp",
+          "industry": "Retail",
+          "contact": "contact@lambdacorp.com"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Grace",
+      "role": "Senior Account Manager",
+      "region": "Europe",
+      "skills": [
+        "Relationship Building",
+        "Presentation",
+        "Client Relations"
+      ],
+      "deals": [
+        {
+          "client": "Nu Corp",
+          "value": 115000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Xi LLC",
+          "value": 60000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Omicron Inc",
+          "value": 70000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Nu Corp",
+          "industry": "Finance",
+          "contact": "grace@nucorp.com"
+        },
+        {
+          "name": "Xi LLC",
+          "industry": "Manufacturing",
+          "contact": "info@xillc.com"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Heidi",
+      "role": "Sales Executive",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Negotiation",
+        "Lead Generation",
+        "CRM"
+      ],
+      "deals": [
+        {
+          "client": "Pi Ltd",
+          "value": 90000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Rho Corp",
+          "value": 100000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Sigma Inc",
+          "value": 55000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Pi Ltd",
+          "industry": "Healthcare",
+          "contact": "heidi@piltd.com"
+        },
+        {
+          "name": "Rho Corp",
+          "industry": "Tech",
+          "contact": "contact@rhocorp.com"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Ivan",
+      "role": "Business Development Executive",
+      "region": "South America",
+      "skills": [
+        "Market Analysis",
+        "Client Acquisition",
+        "Networking"
+      ],
+      "deals": [
+        {
+          "client": "Tau Co",
+          "value": 125000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Upsilon LLC",
+          "value": 70000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Phi Partners",
+          "value": 65000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Tau Co",
+          "industry": "Energy",
+          "contact": "ivan@tauco.com"
+        },
+        {
+          "name": "Upsilon LLC",
+          "industry": "Retail",
+          "contact": "info@upsilonllc.com"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Judy",
+      "role": "Regional Sales Executive",
+      "region": "Middle East",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Presentation"
+      ],
+      "deals": [
+        {
+          "client": "Chi Inc",
+          "value": 98000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Psi Corp",
+          "value": 87000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Omega Partners",
+          "value": 76000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Chi Inc",
+          "industry": "Manufacturing",
+          "contact": "judy@chiinc.com"
+        },
+        {
+          "name": "Psi Corp",
+          "industry": "Finance",
+          "contact": "contact@psicorp.com"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Kevin",
+      "role": "Sales Representative",
+      "region": "North America",
+      "skills": [
+        "Lead Generation",
+        "Cold Calling",
+        "CRM"
+      ],
+      "deals": [
+        {
+          "client": "Alpha Ltd",
+          "value": 85000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Beta Inc",
+          "value": 54000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Gamma LLC",
+          "value": 67000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Alpha Ltd",
+          "industry": "Tech",
+          "contact": "kevin@alphaltd.com"
+        },
+        {
+          "name": "Beta Inc",
+          "industry": "Retail",
+          "contact": "info@betainc.com"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Laura",
+      "role": "Account Manager",
+      "region": "Europe",
+      "skills": [
+        "Customer Service",
+        "Relationship Building",
+        "Data Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Delta Partners",
+          "value": 105000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Epsilon Corp",
+          "value": 64000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Zeta LLC",
+          "value": 72000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Delta Partners",
+          "industry": "Finance",
+          "contact": "laura@deltapartners.com"
+        },
+        {
+          "name": "Epsilon Corp",
+          "industry": "Healthcare",
+          "contact": "contact@epsiloncorp.com"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Mallory",
+      "role": "Senior Sales Executive",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Relations"
+      ],
+      "deals": [
+        {
+          "client": "Eta Partners",
+          "value": 123000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Theta Ltd",
+          "value": 52000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Iota Inc",
+          "value": 83000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Eta Partners",
+          "industry": "Manufacturing",
+          "contact": "mallory@etapartners.com"
+        },
+        {
+          "name": "Theta Ltd",
+          "industry": "Retail",
+          "contact": "contact@thetaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Niaj",
+      "role": "Sales Representative",
+      "region": "South America",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Kappa Corp",
+          "value": 77000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Lambda LLC",
+          "value": 92000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Mu Inc",
+          "value": 66000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Kappa Corp",
+          "industry": "Tech",
+          "contact": "niaj@kappacorp.com"
+        },
+        {
+          "name": "Lambda LLC",
+          "industry": "Finance",
+          "contact": "contact@lambdallc.com"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Olivia",
+      "role": "Account Manager",
+      "region": "Middle East",
+      "skills": [
+        "Customer Service",
+        "Sales Strategy",
+        "Data Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Nu Ltd",
+          "value": 112000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Xi Corp",
+          "value": 61000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Omicron LLC",
+          "value": 73000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Nu Ltd",
+          "industry": "Healthcare",
+          "contact": "olivia@nultd.com"
+        },
+        {
+          "name": "Xi Corp",
+          "industry": "Finance",
+          "contact": "sales@xicorp.com"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Peggy",
+      "role": "Business Development Manager",
+      "region": "North America",
+      "skills": [
+        "Strategic Partnerships",
+        "Negotiation",
+        "Market Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Omicron Partners",
+          "value": 128000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Pi Corp",
+          "value": 81000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Rho LLC",
+          "value": 56000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Omicron Partners",
+          "industry": "Energy",
+          "contact": "peggy@omicronpartners.com"
+        },
+        {
+          "name": "Pi Corp",
+          "industry": "Telecommunications",
+          "contact": "contact@picorp.com"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Quentin",
+      "role": "Regional Sales Manager",
+      "region": "Europe",
+      "skills": [
+        "Relationship Building",
+        "Negotiation",
+        "Market Expansion"
+      ],
+      "deals": [
+        {
+          "client": "Rho Partners",
+          "value": 96000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Sigma Ltd",
+          "value": 47000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Tau Inc",
+          "value": 107000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Rho Partners",
+          "industry": "Hospitality",
+          "contact": "quentin@rhopartners.com"
+        },
+        {
+          "name": "Sigma Ltd",
+          "industry": "Retail",
+          "contact": "info@sigmaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Ruth",
+      "role": "Sales Representative",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Cold Calling",
+        "CRM",
+        "Lead Generation"
+      ],
+      "deals": [
+        {
+          "client": "Upsilon Corp",
+          "value": 87000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Phi LLC",
+          "value": 53000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Chi Inc",
+          "value": 78000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Upsilon Corp",
+          "industry": "Tech",
+          "contact": "ruth@upsiloncorp.com"
+        },
+        {
+          "name": "Phi LLC",
+          "industry": "Manufacturing",
+          "contact": "contact@phillc.com"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Sybil",
+      "role": "Senior Sales Executive",
+      "region": "South America",
+      "skills": [
+        "Negotiation",
+        "Presentation",
+        "CRM"
+      ],
+      "deals": [
+        {
+          "client": "Psi Partners",
+          "value": 118000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Omega Corp",
+          "value": 51000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Alpha Inc",
+          "value": 84000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Psi Partners",
+          "industry": "Finance",
+          "contact": "sybil@psipartners.com"
+        },
+        {
+          "name": "Omega Corp",
+          "industry": "Retail",
+          "contact": "info@omegacorp.com"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Trent",
+      "role": "Sales Executive",
+      "region": "Middle East",
+      "skills": [
+        "Lead Generation",
+        "Negotiation",
+        "Presentation"
+      ],
+      "deals": [
+        {
+          "client": "Beta Partners",
+          "value": 91000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Gamma Ltd",
+          "value": 95000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Delta Inc",
+          "value": 68000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Beta Partners",
+          "industry": "Tech",
+          "contact": "trent@betapartners.com"
+        },
+        {
+          "name": "Gamma Ltd",
+          "industry": "Finance",
+          "contact": "contact@gammaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Uma",
+      "role": "Account Manager",
+      "region": "North America",
+      "skills": [
+        "Customer Service",
+        "Data Analysis",
+        "Relationship Building"
+      ],
+      "deals": [
+        {
+          "client": "Delta Partners",
+          "value": 113000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Epsilon Ltd",
+          "value": 63000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Zeta Inc",
+          "value": 75000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Delta Partners",
+          "industry": "Manufacturing",
+          "contact": "uma@deltapartners.com"
+        },
+        {
+          "name": "Epsilon Ltd",
+          "industry": "Retail",
+          "contact": "info@epsilonltd.com"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Victor",
+      "role": "Business Development Manager",
+      "region": "Europe",
+      "skills": [
+        "Strategic Partnerships",
+        "Market Analysis",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Theta Partners",
+          "value": 124000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Iota Corp",
+          "value": 82000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Kappa Inc",
+          "value": 59000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Theta Partners",
+          "industry": "Energy",
+          "contact": "victor@thetapartners.com"
+        },
+        {
+          "name": "Iota Corp",
+          "industry": "Telecommunications",
+          "contact": "contact@iotacorp.com"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Wendy",
+      "role": "Regional Sales Manager",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Relationship Building",
+        "Negotiation",
+        "Market Expansion"
+      ],
+      "deals": [
+        {
+          "client": "Lambda Partners",
+          "value": 97000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Mu Corp",
+          "value": 46000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Nu Inc",
+          "value": 104000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Lambda Partners",
+          "industry": "Finance",
+          "contact": "wendy@lambdapartners.com"
+        },
+        {
+          "name": "Mu Corp",
+          "industry": "Healthcare",
+          "contact": "contact@mucorp.com"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Xavier",
+      "role": "Sales Representative",
+      "region": "South America",
+      "skills": [
+        "Cold Calling",
+        "CRM",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Omicron Ltd",
+          "value": 88000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Pi Inc",
+          "value": 56000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Rho Corp",
+          "value": 73000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Omicron Ltd",
+          "industry": "Tech",
+          "contact": "xavier@omicronltd.com"
+        },
+        {
+          "name": "Pi Inc",
+          "industry": "Retail",
+          "contact": "info@piinc.com"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Yvonne",
+      "role": "Account Manager",
+      "region": "Middle East",
+      "skills": [
+        "Customer Service",
+        "Sales Strategy",
+        "Data Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Sigma Partners",
+          "value": 114000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Tau Corp",
+          "value": 62000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Upsilon LLC",
+          "value": 76000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Sigma Partners",
+          "industry": "Manufacturing",
+          "contact": "yvonne@sigmapartners.com"
+        },
+        {
+          "name": "Tau Corp",
+          "industry": "Finance",
+          "contact": "contact@taucorp.com"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Zack",
+      "role": "Sales Executive",
+      "region": "North America",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "CRM"
+      ],
+      "deals": [
+        {
+          "client": "Alpha Corp",
+          "value": 83000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Beta Ltd",
+          "value": 50000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Gamma Inc",
+          "value": 69000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Alpha Corp",
+          "industry": "Tech",
+          "contact": "zack@alphacorp.com"
+        },
+        {
+          "name": "Beta Ltd",
+          "industry": "Retail",
+          "contact": "contact@betaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Aaron",
+      "role": "Senior Sales Executive",
+      "region": "Europe",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Relations"
+      ],
+      "deals": [
+        {
+          "client": "Delta Corp",
+          "value": 125000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Epsilon Ltd",
+          "value": 54000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Zeta Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Delta Corp",
+          "industry": "Manufacturing",
+          "contact": "aaron@deltacorp.com"
+        },
+        {
+          "name": "Epsilon Ltd",
+          "industry": "Retail",
+          "contact": "contact@epsilonltd.com"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Betty",
+      "role": "Sales Representative",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Gamma Corp",
+          "value": 79000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Delta Ltd",
+          "value": 91000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Sigma Inc",
+          "value": 66000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Gamma Corp",
+          "industry": "Tech",
+          "contact": "betty@gammacorp.com"
+        },
+        {
+          "name": "Delta Ltd",
+          "industry": "Finance",
+          "contact": "info@deltaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Calvin",
+      "role": "Account Manager",
+      "region": "South America",
+      "skills": [
+        "Customer Service",
+        "Data Analysis",
+        "Relationship Building"
+      ],
+      "deals": [
+        {
+          "client": "Epsilon Partners",
+          "value": 107000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Zeta Ltd",
+          "value": 63000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Theta Inc",
+          "value": 75000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Epsilon Partners",
+          "industry": "Healthcare",
+          "contact": "calvin@epsilonpartners.com"
+        },
+        {
+          "name": "Zeta Ltd",
+          "industry": "Finance",
+          "contact": "contact@zetaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Diana",
+      "role": "Business Development Manager",
+      "region": "Middle East",
+      "skills": [
+        "Strategic Partnerships",
+        "Market Analysis",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Eta Corp",
+          "value": 132000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Theta Partners",
+          "value": 82000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Iota Ltd",
+          "value": 57000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Eta Corp",
+          "industry": "Energy",
+          "contact": "diana@etacorp.com"
+        },
+        {
+          "name": "Theta Partners",
+          "industry": "Telecommunications",
+          "contact": "info@thetapartners.com"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Ethan",
+      "role": "Regional Sales Manager",
+      "region": "North America",
+      "skills": [
+        "Negotiation",
+        "Relationship Building",
+        "Market Expansion"
+      ],
+      "deals": [
+        {
+          "client": "Iota Partners",
+          "value": 94000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Kappa Corp",
+          "value": 48000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Lambda Inc",
+          "value": 106000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Iota Partners",
+          "industry": "Hospitality",
+          "contact": "ethan@iotapartners.com"
+        },
+        {
+          "name": "Kappa Corp",
+          "industry": "Retail",
+          "contact": "contact@kappacorp.com"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Fiona",
+      "role": "Sales Executive",
+      "region": "Europe",
+      "skills": [
+        "Cold Calling",
+        "CRM",
+        "Presentation"
+      ],
+      "deals": [
+        {
+          "client": "Mu Partners",
+          "value": 87000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Nu Ltd",
+          "value": 55000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Xi Inc",
+          "value": 68000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Mu Partners",
+          "industry": "Tech",
+          "contact": "fiona@mupartners.com"
+        },
+        {
+          "name": "Nu Ltd",
+          "industry": "Finance",
+          "contact": "info@nultd.com"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "George",
+      "role": "Senior Sales Executive",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Relations"
+      ],
+      "deals": [
+        {
+          "client": "Omicron Corp",
+          "value": 121000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Pi Ltd",
+          "value": 52000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Rho Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Omicron Corp",
+          "industry": "Manufacturing",
+          "contact": "george@omicroncorp.com"
+        },
+        {
+          "name": "Pi Ltd",
+          "industry": "Retail",
+          "contact": "contact@piltd.com"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Hannah",
+      "role": "Sales Representative",
+      "region": "South America",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Sigma Partners",
+          "value": 78000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Tau Ltd",
+          "value": 92000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Upsilon Inc",
+          "value": 64000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Sigma Partners",
+          "industry": "Tech",
+          "contact": "hannah@sigmapartners.com"
+        },
+        {
+          "name": "Tau Ltd",
+          "industry": "Finance",
+          "contact": "info@taultd.com"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Ian",
+      "role": "Account Manager",
+      "region": "Middle East",
+      "skills": [
+        "Customer Service",
+        "Sales Strategy",
+        "Data Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Phi Partners",
+          "value": 111000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Chi Corp",
+          "value": 60000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Psi Inc",
+          "value": 71000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Phi Partners",
+          "industry": "Healthcare",
+          "contact": "ian@phipartners.com"
+        },
+        {
+          "name": "Chi Corp",
+          "industry": "Finance",
+          "contact": "contact@chicorp.com"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Julia",
+      "role": "Business Development Manager",
+      "region": "North America",
+      "skills": [
+        "Strategic Partnerships",
+        "Negotiation",
+        "Market Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Psi Partners",
+          "value": 127000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Omega Ltd",
+          "value": 84000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Alpha Inc",
+          "value": 58000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Psi Partners",
+          "industry": "Energy",
+          "contact": "julia@psipartners.com"
+        },
+        {
+          "name": "Omega Ltd",
+          "industry": "Telecommunications",
+          "contact": "info@omegaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Kyle",
+      "role": "Regional Sales Manager",
+      "region": "Europe",
+      "skills": [
+        "Relationship Building",
+        "Negotiation",
+        "Market Expansion"
+      ],
+      "deals": [
+        {
+          "client": "Beta Partners",
+          "value": 93000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Gamma Inc",
+          "value": 47000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Delta LLC",
+          "value": 105000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Beta Partners",
+          "industry": "Manufacturing",
+          "contact": "kyle@betapartners.com"
+        },
+        {
+          "name": "Gamma Inc",
+          "industry": "Retail",
+          "contact": "contact@gammainc.com"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Liam",
+      "role": "Sales Executive",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Cold Calling",
+        "CRM",
+        "Presentation"
+      ],
+      "deals": [
+        {
+          "client": "Delta Partners",
+          "value": 86000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Epsilon Inc",
+          "value": 54000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Zeta LLC",
+          "value": 69000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Delta Partners",
+          "industry": "Tech",
+          "contact": "liam@deltapartners.com"
+        },
+        {
+          "name": "Epsilon Inc",
+          "industry": "Finance",
+          "contact": "info@epsiloninc.com"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Mia",
+      "role": "Senior Sales Executive",
+      "region": "South America",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Relations"
+      ],
+      "deals": [
+        {
+          "client": "Alpha Partners",
+          "value": 119000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Beta Corp",
+          "value": 53000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Gamma Ltd",
+          "value": 84000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Alpha Partners",
+          "industry": "Manufacturing",
+          "contact": "mia@alphapartners.com"
+        },
+        {
+          "name": "Beta Corp",
+          "industry": "Retail",
+          "contact": "contact@betacorp.com"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Noah",
+      "role": "Sales Representative",
+      "region": "Middle East",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Delta Inc",
+          "value": 78000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Epsilon Partners",
+          "value": 92000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Zeta Corp",
+          "value": 66000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Delta Inc",
+          "industry": "Tech",
+          "contact": "noah@deltainc.com"
+        },
+        {
+          "name": "Epsilon Partners",
+          "industry": "Finance",
+          "contact": "info@epsilonpartners.com"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Olive",
+      "role": "Account Manager",
+      "region": "North America",
+      "skills": [
+        "Customer Service",
+        "Data Analysis",
+        "Relationship Building"
+      ],
+      "deals": [
+        {
+          "client": "Gamma Partners",
+          "value": 112000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Delta Ltd",
+          "value": 63000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Epsilon Inc",
+          "value": 75000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Gamma Partners",
+          "industry": "Healthcare",
+          "contact": "olive@gammapartners.com"
+        },
+        {
+          "name": "Delta Ltd",
+          "industry": "Finance",
+          "contact": "contact@deltaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Peter",
+      "role": "Business Development Executive",
+      "region": "Europe",
+      "skills": [
+        "Market Analysis",
+        "Client Acquisition",
+        "Networking"
+      ],
+      "deals": [
+        {
+          "client": "Epsilon Corp",
+          "value": 126000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Zeta Partners",
+          "value": 71000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Theta Ltd",
+          "value": 64000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Epsilon Corp",
+          "industry": "Manufacturing",
+          "contact": "peter@epsiloncorp.com"
+        },
+        {
+          "name": "Zeta Partners",
+          "industry": "Retail",
+          "contact": "info@zetapartners.com"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Quincy",
+      "role": "Regional Sales Executive",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Presentation"
+      ],
+      "deals": [
+        {
+          "client": "Theta Partners",
+          "value": 93000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Iota Ltd",
+          "value": 97000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Kappa Inc",
+          "value": 68000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Theta Partners",
+          "industry": "Tech",
+          "contact": "quincy@thetapartners.com"
+        },
+        {
+          "name": "Iota Ltd",
+          "industry": "Finance",
+          "contact": "contact@iotaltd.com"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Rachel",
+      "role": "Sales Executive",
+      "region": "South America",
+      "skills": [
+        "Cold Calling",
+        "CRM",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Kappa Partners",
+          "value": 89000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Lambda Inc",
+          "value": 57000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Mu Corp",
+          "value": 72000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Kappa Partners",
+          "industry": "Manufacturing",
+          "contact": "rachel@kappapartners.com"
+        },
+        {
+          "name": "Lambda Inc",
+          "industry": "Retail",
+          "contact": "info@lambdainc.com"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Steve",
+      "role": "Sales Representative",
+      "region": "Middle East",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Mu Partners",
+          "value": 81000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Nu Corp",
+          "value": 95000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Xi LLC",
+          "value": 67000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Mu Partners",
+          "industry": "Tech",
+          "contact": "steve@mupartners.com"
+        },
+        {
+          "name": "Nu Corp",
+          "industry": "Finance",
+          "contact": "contact@nucorp.com"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Tina",
+      "role": "Account Manager",
+      "region": "North America",
+      "skills": [
+        "Customer Service",
+        "Sales Strategy",
+        "Data Analysis"
+      ],
+      "deals": [
+        {
+          "client": "Xi Partners",
+          "value": 111000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Omicron Ltd",
+          "value": 63000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Pi Inc",
+          "value": 75000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Xi Partners",
+          "industry": "Healthcare",
+          "contact": "tina@xipartners.com"
+        },
+        {
+          "name": "Omicron Ltd",
+          "industry": "Finance",
+          "contact": "info@omicronltd.com"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Umaine",
+      "role": "Senior Sales Executive",
+      "region": "Europe",
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Relations"
+      ],
+      "deals": [
+        {
+          "client": "Pi Partners",
+          "value": 122000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Rho Ltd",
+          "value": 54000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Sigma Inc",
+          "value": 85000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Pi Partners",
+          "industry": "Manufacturing",
+          "contact": "umaine@pipartners.com"
+        },
+        {
+          "name": "Rho Ltd",
+          "industry": "Retail",
+          "contact": "contact@rholtd.com"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Violet",
+      "role": "Sales Representative",
+      "region": "Asia-Pacific",
+      "skills": [
+        "Lead Generation",
+        "Presentation",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Tau Partners",
+          "value": 79000,
+          "status": "Closed Lost"
+        },
+        {
+          "client": "Upsilon Corp",
+          "value": 93000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Phi Ltd",
+          "value": 66000,
+          "status": "In Progress"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Tau Partners",
+          "industry": "Tech",
+          "contact": "violet@taupartners.com"
+        },
+        {
+          "name": "Upsilon Corp",
+          "industry": "Finance",
+          "contact": "info@upsiloncorp.com"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Walter",
+      "role": "Account Manager",
+      "region": "South America",
+      "skills": [
+        "Customer Service",
+        "Data Analysis",
+        "Relationship Building"
+      ],
+      "deals": [
+        {
+          "client": "Phi Partners",
+          "value": 113000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Chi Corp",
+          "value": 62000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Psi Inc",
+          "value": 74000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Phi Partners",
+          "industry": "Healthcare",
+          "contact": "walter@phipartners.com"
+        },
+        {
+          "name": "Chi Corp",
+          "industry": "Finance",
+          "contact": "contact@chicorp.com"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Xena",
+      "role": "Business Development Manager",
+      "region": "Middle East",
+      "skills": [
+        "Strategic Partnerships",
+        "Market Analysis",
+        "Negotiation"
+      ],
+      "deals": [
+        {
+          "client": "Psi Partners",
+          "value": 129000,
+          "status": "In Progress"
+        },
+        {
+          "client": "Omega Ltd",
+          "value": 83000,
+          "status": "Closed Won"
+        },
+        {
+          "client": "Alpha Inc",
+          "value": 59000,
+          "status": "Closed Lost"
+        }
+      ],
+      "clients": [
+        {
+          "name": "Psi Partners",
+          "industry": "Energy",
+          "contact": "xena@psipartners.com"
+        },
+        {
+          "name": "Omega Ltd",
+          "industry": "Telecommunications",
+          "contact": "contact@omegaltd.com"
+        }
+      ]
+    }
+  ]
+}
