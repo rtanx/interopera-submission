@@ -17,7 +17,27 @@ class SalesRepService:
             data_file_path: Path to the JSON data file
         """
         self.data_file_path = data_file_path
-        self._data = self._load_data()
+        self._data, self._raw_json_data = self._load_data()
+
+    @property
+    def data(self) -> SalesData:
+        """
+        Get the loaded data
+
+        Returns:
+            SalesData: Loaded data in Pydantic model
+        """
+        return self._data
+
+    @property
+    def raw_json_data(self) -> Dict[str, Any]:
+        """
+        Get the raw JSON data
+
+        Returns:
+            Dict: Raw JSON data
+        """
+        return self._raw_json_data
 
     @lru_cache(maxsize=1)
     def _load_data(self) -> SalesData:
@@ -31,7 +51,7 @@ class SalesRepService:
         try:
             with open(self.data_file_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
-                return SalesData(**data)
+                return SalesData(**data), data
         except FileNotFoundError:
             raise Exception(f"Data file not found: {self.data_file_path}")
         except json.JSONDecodeError:
