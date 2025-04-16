@@ -38,6 +38,7 @@ class RAGChatBotService:
 
             docs.append(Document(page_content=combined_text, metadata={"name": rep.name, "id": rep.id}))
 
+        print(docs)
         # split document into smaller chunks
         text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=100)
         split_docs = text_splitter.split_documents(docs)
