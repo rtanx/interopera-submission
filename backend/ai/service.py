@@ -2,68 +2,99 @@ from backend.config import get_env_settings
 from backend.data.service import SalesRepService
 from fastapi import Depends
 from backend.data.service import get_sales_rep_service
+from .utils import SalesRepDocumentProcessor, SalesAnalyticsTools, SalesAnalyticsRetriever
 
 from langchain_core.documents import Document
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.chains import RetrievalQA
+from langchain.chains import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import CharacterTextSplitter
+from langchain_chroma import Chroma
+from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
+from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.agents import create_structured_chat_agent, AgentExecutor
 import os
 
 
 class RAGChatBotService:
-    def __init__(self, sales_rep_service: SalesRepService):
-        sales_reps = sales_rep_service.get_all_sales_reps()
+    def __init__(self, sales_rep_service: SalesRepService, llm=None):
+        self.sales_data = sales_rep_service.get_all_sales_reps()
 
-        # convert each SalesRep into a langchain document
-        docs = []
-        for rep in sales_reps:
-            rep_info = (
-                f"Name: {rep.name}\n"
-                f"Role: {rep.role}\n"
-                f"Region: {rep.region}\n"
-                f"Skills: {', '.join(rep.skills)}\n"
-            )
+        self.llm = llm or ChatGoogleGenerativeAI(model="gemini-2.0-flash-001", temperature=0.2, api_key=get_env_settings().GEMINI_API_KEY)
 
-            deals_info = "Deals:\n" + "\n".join(
-                [f"Client: {deal.client}, Value: {deal.value}, Status: {deal.status}" for deal in rep.deals]
-            )
+        # Process documents
+        self.documents = SalesRepDocumentProcessor.create_documents_from_sales_data(self.sales_data)
 
-            clients_info = "Clients:\n" + "\n".join(
-                [f"Name: {client.name}, Industry: {client.industry}, Contact: {client.contact}" for client in rep.clients]
-            )
+        # Create embeddings model
+        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-            combined_text = f"{rep_info}\n{deals_info}\n\n{clients_info}"
+        # Create vector store
+        self.vectore_store = Chroma.from_documents(documents=self.documents, embedding=self.embeddings)
 
-            docs.append(Document(page_content=combined_text, metadata={"name": rep.name, "id": rep.id}))
+        # Create custom retriever
+        self.retriever = SalesAnalyticsRetriever(sales_data=self.sales_data, vector_store=self.vectore_store)
 
-        print(docs)
-        # split document into smaller chunks
-        text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=100)
-        split_docs = text_splitter.split_documents(docs)
+        # Create analytics tools
+        self.analytics_tools = SalesAnalyticsTools(self.sales_data)
 
-        # create vector store using embeddings
-        embeddings_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        vectorstore = FAISS.from_documents(split_docs, embeddings_model)
-        retriever = vectorstore.as_retriever()
+        # setup RAG chain
+        self._setup_rag_chain()
 
-        # setup Gemini LLM and RetrivalQA chain
-        gemini_api_key = get_env_settings().GEMINI_API_KEY
-        llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-001", temperature=0.2, api_key=gemini_api_key)
-        self.qa_chain = RetrievalQA.from_chain_type(
-            llm=llm,
-            chain_type="stuff",
-            retriever=retriever,
-            return_source_documents=True,
-        )
+        # setup agent
+        self._setup_agent()
+
+    def _setup_rag_chain(self):
+        prompt_template = """
+        You are a sales analytics assistant with access to sales representatives data.
+        Answer the question based on the following sales representative(s) information:
+        
+        {context}
+        
+        Question: {input}
+        
+        Please answer the question accurately based on the retrieved data. 
+        If calculating totals, percentages, or other metrics, show your reasoning step-by-step.
+        """
+
+        prompt = PromptTemplate.from_template(prompt_template)
+        document_chain = create_stuff_documents_chain(self.llm, prompt)
+        self.rag_chain = create_retrieval_chain(self.retriever, document_chain)
+
+    def _setup_agent(self):
+        tools = self.analytics_tools.get_tools()
+
+        agent_prompt = ChatPromptTemplate.from_messages([
+            ("system", """
+You are a sales analytics assistant that helps analyze sales rep performance data.
+You have access to the following tools:
+
+{tools}
+
+Use these tools to provide accurate information about sales reps, their deals, and clients.
+Always use the appropriate tool from: {tool_names}
+
+For comparison questions, make sure to use the comparison tool rather than making separate queries.
+When providing financial data, format values with dollar signs and commas.
+If calculating or comparing metrics, show your reasoning clearly."""),
+            ("human", "{input}"),
+            ("ai", "{agent_scratchpad}"),
+        ])
+
+        agent = create_structured_chat_agent(self.llm, tools, prompt=agent_prompt)
+        self.agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
     async def query(self, question: str) -> dict:
-        result = self.qa_chain({"query": question})
-        return {
-            "answer": result["result"],
-            "source": [doc.metadata.get("name", "unknown") for doc in result["source_documents"]]
-        }
+        # Analyze the query to determine if it needs specific tools
+        query = question.lower()
+
+        # if "compare" in query and any(rep.name.lower() in query for rep in self.sales_data.salesReps):
+        #     print("Using comparison tool")
+        #     return self.agent_executor.invoke({"input": question})
+
+        # Default to RAG for general queries
+        result = self.rag_chain.invoke({"input": question})
+        return result
 
 
 async def get_rag_chatbot_service(sales_rep_sevice=Depends(get_sales_rep_service)):

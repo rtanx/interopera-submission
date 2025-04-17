@@ -1,11 +1,13 @@
 from typing import List, Optional, Any
+from pydantic import BaseModel
 from backend.data.schemas import SalesRep, Deal, Client, SalesData
 from langchain_core.documents import Document
-from langchain_core.documents import BaseRetriever
+from langchain_core.retrievers import BaseRetriever
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.callbacks import CallbackManagerForRetrieverRun
 from langchain_core.tools import tool, Tool
+from .schemas import ToolSchema_RepName, ToolSchema_CompareReps
 
 
 class SalesRepDocumentProcessor:
@@ -70,24 +72,30 @@ class SalesRepDocumentProcessor:
         return [cls.create_document_from_rep(rep) for rep in sales_data.salesReps]
 
 
-class SalesAnalyticsRetriever(BaseRetriever):
+class SalesAnalyticsRetriever(BaseRetriever, BaseModel):
     """
     Custom retriever to fetch documents based on sales data. 
     Combines vector search with direct Pydantic model access.
     """
+    sales_data: SalesData
+    vector_store: Chroma
 
-    def __init__(self, sales_data: SalesData, vector_store: Optional[Any] = None, embeddings_model: Optional[Any] = None):
-        """
-        Initialize the retriever with sales data and optional vector store.
-        """
-        self.sales_data = sales_data
-        self.sales_reps_by_name = {rep.name.lower(): rep for rep in sales_data.salesReps}
-        self.vector_store = vector_store
-        self.embeddings_model = embeddings_model or HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    class Config:
+        arbitrary_types_allowed = True
 
-        if not vector_store:
-            docs = SalesRepDocumentProcessor.create_documents_from_sales_data(sales_data)
-            self.vector_store = Chroma.from_documents(documents=docs, embedding=self.embeddings_model)
+    # def __init__(self, sales_data: SalesData, vector_store: Optional[Any] = None, embeddings_model: Optional[Any] = None):
+    #     """
+    #     Initialize the retriever with sales data and optional vector store.
+    #     """
+
+    #     self.sales_data = sales_data
+    #     self.sales_reps_by_name = {rep.name.lower(): rep for rep in sales_data.salesReps}
+    #     self.vector_store = vector_store
+    #     self.embeddings_model = embeddings_model or HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+    #     if not vector_store:
+    #         docs = SalesRepDocumentProcessor.create_documents_from_sales_data(sales_data)
+    #         self.vector_store = Chroma.from_documents(documents=docs, embedding=self.embeddings_model)
 
     def _get_relevant_documents(self, query: str, *, run_manager: CallbackManagerForRetrieverRun) -> List[Document]:
         """
@@ -95,12 +103,8 @@ class SalesAnalyticsRetriever(BaseRetriever):
         """
         vector_docs = self.vector_store.similarity_search(query, k=5)
 
-        mentioned_reps = []
-        for rep_name in self.sales_reps_by_name:
-            if rep_name in query.lower():
-                rep = self.sales_reps_by_name[rep_name]
-                mentioned_reps.append(rep)
-
+        for rep in self.sales_data.salesReps:
+            if rep.name.lower() in query.lower():
                 rep_doc = SalesRepDocumentProcessor.create_document_from_rep(rep)
                 if not any(d.metadata.get("rep_id") == rep.id for d in vector_docs):
                     vector_docs.append(rep_doc)
@@ -174,14 +178,14 @@ class SalesAnalyticsTools:
         return [
             Tool(
                 name="get_rep_performance",
-                desc="Get performance metrics for a spesific sales representative",
+                description="Get performance metrics for a spesific sales representative",
                 func=self.get_rep_performance,
-                args_schema={"rep_name": str},
+                args_schema=ToolSchema_RepName,
             ),
             Tool(
                 name="compare_reps",
                 description="Compare performance metrics between two sales representatives",
                 func=self.compare_reps,
-                args_schema={"rep1_name": str, "rep2_name": str},
+                args_schema=ToolSchema_CompareReps,
             )
         ]

@@ -60,14 +60,14 @@ class SalesRepService:
         except Exception as e:
             raise Exception(f"Error loading data: {str(e)}")
 
-    def get_all_sales_reps(self) -> List[SalesRep]:
+    def get_all_sales_reps(self) -> SalesData:
         """
         Get all sales representatives
 
         Returns:
-            List[SalesRep]: List of all sales representatives
+            SalesData: List of all sales representatives
         """
-        return self._data.salesReps
+        return self._data
 
     def get_sales_rep_by_id(self, rep_id: int) -> Optional[SalesRep]:
         """

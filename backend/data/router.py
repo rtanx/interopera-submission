@@ -1,12 +1,12 @@
 from typing import List, Dict, Any
 from fastapi import APIRouter, HTTPException, Depends
-from .schemas import SalesRep
+from .schemas import SalesRep, SalesData
 from .service import SalesRepService, get_sales_rep_service
 
 router = APIRouter()
 
 
-@router.get("/", response_model=List[SalesRep])
+@router.get("/", response_model=SalesData)
 async def get_all(service: SalesRepService = Depends(get_sales_rep_service)):
     return service.get_all_sales_reps()
 

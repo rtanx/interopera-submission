@@ -12,5 +12,4 @@ async def ask_question(q: str = Query(..., description="question for the RAG cha
     """
     # Placeholder logic: replace with actual AI model call
     resp = await rag_chatbot_service.query(q)
-    print(resp)
-    return {}
+    return resp
