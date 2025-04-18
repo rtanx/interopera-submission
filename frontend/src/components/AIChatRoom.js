@@ -1,6 +1,10 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 export default function AIChatRoom({ selectedRep }) {
     const [messages, setMessages] = useState([
@@ -41,7 +45,6 @@ export default function AIChatRoom({ selectedRep }) {
         e.preventDefault();
         if (!inputValue.trim()) return;
 
-        // Add user message
         const userMessage = {
             id: Date.now(),
             sender: 'user',
@@ -53,52 +56,97 @@ export default function AIChatRoom({ selectedRep }) {
         setInputValue('');
         setIsLoading(true);
 
-        // Simulate AI response (TODO: replace with actual API call)
-        setTimeout(() => {
-            // Example response based on user input
-            let responseText = "I'm processing your query about sales data. In a real implementation, this would connect to your backend AI service.";
+        try {
+            const resp = await fetch('/api/ai', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: inputValue,
+                    rep_context_id: selectedRep?.id || null
+                })
+            });
 
-            if (inputValue.toLowerCase().includes('performance')) {
-                responseText = "Performance analysis would show metrics like close rates, average deal size, and revenue trends. In the full implementation, I'd provide specific insights based on the data.";
-            } else if (inputValue.toLowerCase().includes('deal') || inputValue.toLowerCase().includes('sales')) {
-                responseText = "I can help analyze deal pipelines, conversion rates, and forecast future sales based on historical data. The complete implementation would connect to your sales database.";
-            }
+            if (!resp.ok) throw new Error(`Failed to fetch AI response ${resp.status}`);
+
+            const { answer } = await resp.json();
 
             const aiMessage = {
-                id: Date.now(),
+                id: Date.now() + 1,
                 sender: 'ai',
-                text: responseText,
+                text: answer,
                 timestamp: new Date()
             };
 
             setMessages(prev => [...prev, aiMessage]);
+
+        } catch (err) {
+            console.log('Error fetching AI response:', err);
+            setMessages(prev => [
+                ...prev,
+                {
+                    id: Date.now() + 1,
+                    sender: 'ai',
+                    text: 'Sorry, There was an error processing your request. Please try again.',
+                    timestamp: new Date()
+                }
+            ]);
+        } finally {
             setIsLoading(false);
-        }, 1000);
+        }
     };
 
     return (
-        <div className="flex flex-col h-full max-h-[600px]">
+        <div className="flex flex-col h-full max-h-[700px]">
             <div className="bg-blue-600 text-white p-3 rounded-t-lg">
                 <h2 className="font-semibold">Sales Assistant</h2>
             </div>
 
             {/* Chat messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-                {messages.map((message) => (
+                {messages.map(msg => (
                     <div
-                        key={message.id}
-                        className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                        key={msg.id}
+                        className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                         <div
-                            className={`max-w-[80%] p-3 rounded-lg ${message.sender === 'user'
+                            className={`max-w-[80%] p-3 rounded-lg ${msg.sender === 'user'
                                 ? 'bg-blue-600 text-white'
                                 : 'bg-white border border-gray-200'
                                 }`}
                         >
-                            <p>{message.text}</p>
-                            <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'
+                            {msg.sender === 'ai' ? (
+                                <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    components={{
+                                        code({ node, inline, className, children, ...props }) {
+                                            const match = /language-(\w+)/.exec(className || '');
+                                            return !inline && match ? (
+                                                <SyntaxHighlighter
+                                                    style={oneDark}
+                                                    language={match[1]}
+                                                    PreTag="div"
+                                                    {...props}
+                                                >
+                                                    {String(children).replace(/\n$/, '')}
+                                                </SyntaxHighlighter>
+                                            ) : (
+                                                <code className={className} {...props}>
+                                                    {children}
+                                                </code>
+                                            );
+                                        }
+                                    }}
+                                >
+                                    {msg.text}
+                                </ReactMarkdown>
+                            ) : (
+                                <p>{msg.text}</p>
+                            )}
+                            <p className={`text-xs mt-1 ${msg.sender === 'user' ? 'text-blue-200' : 'text-gray-500'
                                 }`}>
-                                {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                             </p>
                         </div>
                     </div>

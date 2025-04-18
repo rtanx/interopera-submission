@@ -20,7 +20,7 @@ export default function Home() {
           throw new Error('Failed to fetch data');
         }
         const data = await response.json();
-        setSalesData(data);
+        setSalesData(data?.salesReps || []);
       } catch (err) {
         setError(err.message);
         console.error('Error fetching sales data:', err);

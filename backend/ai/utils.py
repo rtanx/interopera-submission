@@ -83,20 +83,6 @@ class SalesAnalyticsRetriever(BaseRetriever, BaseModel):
     class Config:
         arbitrary_types_allowed = True
 
-    # def __init__(self, sales_data: SalesData, vector_store: Optional[Any] = None, embeddings_model: Optional[Any] = None):
-    #     """
-    #     Initialize the retriever with sales data and optional vector store.
-    #     """
-
-    #     self.sales_data = sales_data
-    #     self.sales_reps_by_name = {rep.name.lower(): rep for rep in sales_data.salesReps}
-    #     self.vector_store = vector_store
-    #     self.embeddings_model = embeddings_model or HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-
-    #     if not vector_store:
-    #         docs = SalesRepDocumentProcessor.create_documents_from_sales_data(sales_data)
-    #         self.vector_store = Chroma.from_documents(documents=docs, embedding=self.embeddings_model)
-
     def _get_relevant_documents(self, query: str, *, run_manager: CallbackManagerForRetrieverRun) -> List[Document]:
         """
         Get relevant documents based on the query using both vector search and model access

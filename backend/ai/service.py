@@ -11,7 +11,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
+from langchain_core.prompts import PromptTemplate, ChatPromptTemplate, MessagesPlaceholder, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.agents import create_structured_chat_agent, AgentExecutor
 import os
@@ -63,9 +63,7 @@ class RAGChatBotService:
 
     def _setup_agent(self):
         tools = self.analytics_tools.get_tools()
-
-        agent_prompt = ChatPromptTemplate.from_messages([
-            ("system", """
+        system_template = """
 You are a sales analytics assistant that helps analyze sales rep performance data.
 You have access to the following tools:
 
@@ -76,9 +74,12 @@ Always use the appropriate tool from: {tool_names}
 
 For comparison questions, make sure to use the comparison tool rather than making separate queries.
 When providing financial data, format values with dollar signs and commas.
-If calculating or comparing metrics, show your reasoning clearly."""),
-            ("human", "{input}"),
-            ("ai", "{agent_scratchpad}"),
+If calculating or comparing metrics, show your reasoning clearly."""
+
+        agent_prompt = ChatPromptTemplate.from_messages([
+            SystemMessagePromptTemplate.from_template(system_template),
+            HumanMessagePromptTemplate.from_template("{input}"),
+            MessagesPlaceholder(variable_name="agent_scratchpad"),
         ])
 
         agent = create_structured_chat_agent(self.llm, tools, prompt=agent_prompt)
